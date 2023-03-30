@@ -1,2 +1,36 @@
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+body {
+    font-family: 'Outfit', sans-serif;
+}
+
+header {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navigation {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+}
+
+#company {
+    font-size: 50px;
+}
+
+#user-info {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#user-cart {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width:30%;
+}
