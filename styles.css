@@ -9,6 +9,11 @@ header {
     display:flex;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+a {
+    color: hsl(219, 9%, 45%)
 }
 
 #navigation {
@@ -33,4 +38,14 @@ header {
     justify-content: space-around;
     align-items: center;
     width:30%;
+}
+
+#cart {
+    height: 20px;
+    width: 21px;
+}
+
+#avatar {
+    height: 50px;
+    width: 50px;
 }
