@@ -49,3 +49,17 @@ a {
     height: 50px;
     width: 50px;
 }
+
+#main-content {
+  height: 565px;
+  width: 1015px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#product-image {
+  width: 445px;
+  height: 445px;
+  border-radius: 15px;
+}
