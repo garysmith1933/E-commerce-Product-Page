@@ -148,3 +148,8 @@ a {
 #cart-text, #cart-image {
 color:white;
 }
+
+
+#cart-image {
+  filter: brightness(0) invert(1);
+}
