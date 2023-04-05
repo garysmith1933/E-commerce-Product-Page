@@ -111,7 +111,6 @@ a {
 
 #product-current-price {
   display: flex;
-  justify-content: space-between;
   width: 173px;
 }
 
@@ -128,12 +127,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
+  margin-left: 1rem;
 }
 
 #product-original-price {
   margin-top: -1rem;
-  color:hsl(220, 14%, 75%)
+  color:hsl(220, 14%, 75%);
+  text-decoration: line-through;
 }
 
 #add-to-cart {
