@@ -124,6 +124,7 @@ a {
   display: flex;
   width: 400px;
   justify-content: space-between;
+  align-items: center;
 }
 
 #quantity {
@@ -139,17 +140,22 @@ a {
 #button {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 240px;
   height: 48px;
   background-color:hsl(26,100%,55%);
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 #cart-text, #cart-image {
 color:white;
+font-weight: bold;
 }
 
 
 #cart-image {
   filter: brightness(0) invert(1);
+  height: 19px;
+  width: 17px;
+  margin-right: 1rem;
 }
