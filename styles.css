@@ -2,7 +2,7 @@
 .attribution a { color: hsl(228, 45%, 44%); }
 
 body {
-    font-family: 'Outfit', sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 header {
@@ -88,6 +88,21 @@ a {
   height: 426px;
 }
 
+#company-name {
+  color: hsl(26,100%,55%);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#product-description, #product-title {
+  margin-top: 0;
+}
+
+#product-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
 #product-prices {
   display:flex;
   flex-direction: column;
@@ -113,10 +128,11 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0;
 }
 
 #product-original-price {
-  margin-top: 0;
+  margin-top: -1rem;
   color:hsl(220, 14%, 75%)
 }
 
@@ -125,6 +141,7 @@ a {
   width: 400px;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
 }
 
 #quantity {
@@ -145,6 +162,7 @@ a {
   height: 48px;
   background-color:hsl(26,100%,55%);
   border-radius: 8px;
+  box-shadow: hsl(26,100%,70%) 0px 20px 30px -10px;
 }
 
 #cart-text, #cart-image {
