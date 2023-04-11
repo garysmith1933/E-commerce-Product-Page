@@ -40,6 +40,18 @@ a {
     justify-content: space-around;
     align-items: center;
     width:30%;
+    position: relative;
+}
+
+#cart-display {
+  position: absolute;
+  background-color: red;
+  height: 256px;
+  width: 360px;
+  right: 110px;
+  top: 110px;
+  border-radius: 8px;
+
 }
 
 #cart {
