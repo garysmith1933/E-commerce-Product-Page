@@ -81,7 +81,7 @@ a {
 }
 
 .current-image:hover {
-  opacity: 75%;
+  opacity: 50%;
 }
 
 #product-info {
@@ -184,4 +184,9 @@ font-weight: bold;
   height: 19px;
   width: 17px;
   margin-right: 1rem;
+}
+
+.selected {
+  border: 2px solid hsl(26,100%,55%);;
+  opacity: 50%;
 }
