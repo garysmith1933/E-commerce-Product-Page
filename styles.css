@@ -45,14 +45,39 @@ a {
 
 #cart-display {
   position: absolute;
-  background-color: red;
   height: 256px;
   width: 360px;
   right: 110px;
   top: 110px;
   border-radius: 8px;
-
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 1;
+  background-color: white;
 }
+
+#cart-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #E4E9F2;
+  font-weight: bold;
+  height: 75px;
+}
+
+#cart-header {
+  margin-left: 1rem;
+}
+
+#cart-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 175px;
+  font-weight: bold;
+  color: #69707D
+}
+
+
 
 #cart {
     height: 20px;
