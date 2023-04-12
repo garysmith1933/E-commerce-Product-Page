@@ -12,6 +12,16 @@
   
   <title>Frontend Mentor | E-commerce product page</title>
 
+  <script>
+    const isCartEmpty = () => {
+      const cart = document.getElementById("cart-items")
+      if ( cart.childElementCount < 2 ) {
+        cart.innerHTML += 'Your cart is empty.'
+      }
+  
+    }
+  </script>
+
 </head>
 <body>
   <header id="header">
@@ -28,11 +38,24 @@
       <img id='cart' src='./images/icon-cart.svg' alt="cart"/>
     </div>
     <img id='avatar' src='./images/image-avatar.png' alt="avatar"/>
+
+    <div id='cart-display'>
+      <div id="cart-title">
+        <span id="cart-header"> Cart </span>
+      </div>
+      
+
+      <div id="cart-items">
+        <script>
+          isCartEmpty()
+        </script>
+      </div>
+    </div>
   </header>
 
   <main id="main-content">
     <section id="product-display">
-      <img id='product-image'src="./images/image-product-1.jpg" alt="shoes"/>
+      <img id='product-image' src="./images/image-product-1.jpg" alt="shoes"/>
 
       <div id="product-thumbnails">
         <img class='current-image selected' src="./images/image-product-1-thumbnail.jpg" alt="shoes"/>
@@ -80,3 +103,4 @@
   </div>
 </body>
 </html>
+
