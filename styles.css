@@ -25,6 +25,15 @@ a {
     width: 50%;
 }
 
+.nav-item {
+  margin-bottom: 0;
+}
+
+.nav-item:hover {
+  border-bottom: 3px solid #FF7E1B;
+
+}
+
 #company {
     font-size: 50px;
 }
