@@ -18,7 +18,20 @@
       if ( cart.childElementCount < 2 ) {
         cart.innerHTML += 'Your cart is empty.'
       }
-  
+    }
+
+    const toggleCart = () => {
+      const cart = document.getElementById("cart-display")
+
+      if (cart.classList.contains("close")) {
+        cart.classList.remove("close")
+        cart.classList.add("open")
+      }
+     
+      else {
+        cart.classList.remove("open")
+        cart.classList.add("close")
+      }
     }
   </script>
 
@@ -35,11 +48,11 @@
     </nav>
 
     <div id="user-info">
-      <img id='cart' src='./images/icon-cart.svg' alt="cart"/>
+      <img id='cart' onclick=toggleCart() src='./images/icon-cart.svg' alt="cart"/>
     </div>
     <img id='avatar' src='./images/image-avatar.png' alt="avatar"/>
 
-    <div id='cart-display'>
+    <div id='cart-display' class="close">
       <div id="cart-title">
         <span id="cart-header"> Cart </span>
       </div>
