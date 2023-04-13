@@ -77,6 +77,13 @@ a {
   color: #69707D
 }
 
+.close {
+  display: none;
+}
+
+.open {
+  display: inline;
+}
 
 
 #cart {
