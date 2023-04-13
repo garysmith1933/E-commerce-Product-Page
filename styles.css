@@ -224,6 +224,10 @@ a {
   box-shadow: hsl(26,100%,70%) 0px 20px 30px -10px;
 }
 
+#button:hover {
+  opacity: 75%;
+}
+
 #cart-text, #cart-image {
 color:white;
 font-weight: bold;
