@@ -99,7 +99,7 @@ a {
     border: 2px solid #FF7E1B */
 }
 
-#avatar-active {
+.avatar-active {
   border-radius: 360%;
   border: 1px solid #FF7E1B
 }

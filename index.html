@@ -22,15 +22,19 @@
 
     const toggleCart = () => {
       const cart = document.getElementById("cart-display")
+      const avatar = document.getElementById("avatar")
 
       if (cart.classList.contains("close")) {
         cart.classList.remove("close")
         cart.classList.add("open")
+
+        avatar.classList.add("avatar-active")
       }
      
       else {
         cart.classList.remove("open")
         cart.classList.add("close")
+        avatar.classList.remove("avatar-active")
       }
     }
   </script>
