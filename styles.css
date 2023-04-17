@@ -87,6 +87,13 @@ a {
   flex-direction: column;
 }
 
+.items {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 1rem;
+}
+
 .close {
   display: none;
 }

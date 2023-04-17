@@ -16,16 +16,16 @@
     const isCartEmpty = () => {
       let cartContainer = document.getElementById("cart-items");
       let cart = JSON.parse(window.localStorage.getItem("cart"));
+      console.log(cart)
 
-
-      if ( !cart.length ) {
+      if ( !cart || cart.length === 0) {
         cartContainer.innerHTML += 'Your cart is empty.'
       }
 
       else {
         for (const item of cart) {
-          const { title, image, quantity, totalPrice } = item;
-          cartContainer.innerHTML += (`<div id='items' src=${image}>${title}</div>`)
+          const { title, image, quantity, totalPrice, id } = item;
+          cartContainer.innerHTML += (`<div class='items' src=${image}>${title}<img onclick=${removeFromCart(id)} src='./images/icon-delete.svg'></div>`) 
         }
       }
     }
@@ -48,19 +48,22 @@
       }
     }
 
+
+  //need to be adjusted for other products: ex: if the same image, adjust quantity, otherwise add to storage
     const addToCart = () => {
       let cart = JSON.parse(window.localStorage.getItem("cart"));
       const image = document.getElementById("product-image").src;
       const quantity = Number(document.getElementById("quantity").innerHTML);
       const title = 'Fall Limited Edition Sneakers';
       const totalPrice = 125.00 * quantity;
-      const data = {title, image, quantity, totalPrice}
+      const id = cart ? cart.length : 0
+      const data = {title, image, quantity, totalPrice, id}
 
       if (quantity === 0) return;
 
       //if the cart does not exist, make one and add the data to it
       if (!cart) {
-        window.localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice}]))
+        window.localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
       }
 
       else {
@@ -80,6 +83,13 @@
       const quantity = document.getElementById("quantity");
       if (Number(quantity.innerHTML) === 0) return;
       quantity.innerHTML = Number(quantity.innerHTML) - 1
+    }
+
+    const removeFromCart = (id) => {
+      let cart = JSON.parse(window.localStorage.getItem("cart"))
+
+      cart = cart.filter(item => item.id !== id)
+      window.localStorage.setItem("cart", JSON.stringify(cart))
     }
 
   </script>
