@@ -54,8 +54,16 @@
     }
 
     const increaseQuantity = () => {
-      const quantity = document.getElementById("quantity")
-      quantity.innerHTML = Number(quantity.innerHTML) + 1
+      const quantity = document.getElementById("quantity");
+      quantity.innerHTML = Number(quantity.innerHTML) + 1;
+    }
+
+    const decreaseQuantity = () => {
+      const quantity = document.getElementById("quantity");
+     
+      if (Number(quantity.innerHTML) === 0) return;
+
+      quantity.innerHTML = Number(quantity.innerHTML) - 1
     }
 
   </script>
