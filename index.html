@@ -14,9 +14,19 @@
 
   <script>
     const isCartEmpty = () => {
-      const cart = document.getElementById("cart-items")
-      if ( cart.childElementCount < 2 ) {
-        cart.innerHTML += 'Your cart is empty.'
+      let cartContainer = document.getElementById("cart-items");
+      let cart = JSON.parse(window.localStorage.getItem("cart"));
+
+
+      if ( !cart.length ) {
+        cartContainer.innerHTML += 'Your cart is empty.'
+      }
+
+      else {
+        for (const item of cart) {
+          const { title, image, quantity, totalPrice } = item;
+          cartContainer.innerHTML += (`<div id='items' src=${image}>${title}</div>`)
+        }
       }
     }
 
@@ -44,13 +54,13 @@
       const quantity = Number(document.getElementById("quantity").innerHTML);
       const title = 'Fall Limited Edition Sneakers';
       const totalPrice = 125.00 * quantity;
-      const data = [{title, image, quantity, totalPrice}]
+      const data = {title, image, quantity, totalPrice}
 
       if (quantity === 0) return;
 
       //if the cart does not exist, make one and add the data to it
       if (!cart) {
-        window.localStorage.setItem("cart", JSON.stringify(data))
+        window.localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice}]))
       }
 
       else {

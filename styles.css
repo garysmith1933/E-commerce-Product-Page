@@ -83,7 +83,8 @@ a {
   align-items: center;
   height: 175px;
   font-weight: bold;
-  color: #69707D
+  color: #69707D;
+  flex-direction: column;
 }
 
 .close {
