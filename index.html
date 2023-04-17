@@ -44,7 +44,7 @@
       
       //if the cart does not exist, make one and add the data to it
       if (!cart) {
-        const data = 
+        const data = []
         windows.localStorage.setItem("cart", data)
         
       }
@@ -52,6 +52,12 @@
       //else 
       //add item to exist cart 
     }
+
+    const increaseQuantity = () => {
+      const quantity = document.getElementById("quantity")
+      quantity.innerHTML = Number(quantity.innerHTML) + 1
+    }
+
   </script>
 
 </head>
@@ -113,10 +119,10 @@
         <p id="product-original-price">$250.00</p>
 
         <div id="add-to-cart">
-          <div id="quantity">
-            <img id='minus" src="./images/icon-minus.svg" alt="minus"/>
-            <p> 0 <p>
-            <img id='plus' src="./images/icon-plus.svg" alt="plus"/>  
+          <div id="quantity-container">
+            <img id='minus' onclick="decreaseQuantity()" src="./images/icon-minus.svg" alt="minus"/>
+            <p id="quantity"> 0 <p>
+            <img id='plus' onclick="increaseQuantity()" src="./images/icon-plus.svg" alt="plus"/>  
           </div>
 
           <div id="button" onclick="addToCart()">

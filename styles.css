@@ -212,7 +212,7 @@ a {
   margin-top: 1rem;
 }
 
-#quantity {
+#quantity-container {
   display:flex;
   background-color: hsl(223,64%,98%);
   justify-content: space-evenly;
