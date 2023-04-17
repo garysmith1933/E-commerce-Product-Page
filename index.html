@@ -37,6 +37,21 @@
         avatar.classList.remove("avatar-active")
       }
     }
+
+    const addToCart = () => {
+      const image = document.getElementById("product-image").src
+      const cart = window.localStorage.getItem("cart")
+      
+      //if the cart does not exist, make one and add the data to it
+      if (!cart) {
+        const data = 
+        windows.localStorage.setItem("cart", data)
+        
+      }
+
+      //else 
+      //add item to exist cart 
+    }
   </script>
 
 </head>
@@ -61,7 +76,6 @@
         <span id="cart-header"> Cart </span>
       </div>
       
-
       <div id="cart-items">
         <script>
           isCartEmpty()
@@ -100,12 +114,12 @@
 
         <div id="add-to-cart">
           <div id="quantity">
-            <img id='minus' src="./images/icon-minus.svg" alt="minus"/>
+            <img id='minus" src="./images/icon-minus.svg" alt="minus"/>
             <p> 0 <p>
             <img id='plus' src="./images/icon-plus.svg" alt="plus"/>  
           </div>
 
-          <div id="button">
+          <div id="button" onclick="addToCart()">
             <img id='cart-image' src="./images/icon-cart.svg" alt="cart icon">
             <p id='cart-text'> Add To Cart </p>
           </div>
