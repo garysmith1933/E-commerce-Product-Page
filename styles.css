@@ -25,6 +25,15 @@ a {
     width: 50%;
 }
 
+.nav-item {
+  margin-bottom: 0;
+}
+
+.nav-item:hover {
+  border-bottom: 3px solid #FF7E1B;
+
+}
+
 #company {
     font-size: 50px;
 }
@@ -99,7 +108,7 @@ a {
     border: 2px solid #FF7E1B */
 }
 
-#avatar-active {
+.avatar-active {
   border-radius: 360%;
   border: 1px solid #FF7E1B
 }
@@ -222,6 +231,10 @@ a {
   background-color:hsl(26,100%,55%);
   border-radius: 8px;
   box-shadow: hsl(26,100%,70%) 0px 20px 30px -10px;
+}
+
+#button:hover {
+  opacity: 75%;
 }
 
 #cart-text, #cart-image {
