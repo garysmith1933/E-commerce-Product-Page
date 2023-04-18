@@ -21,7 +21,7 @@
 
         for (const item of cart) {
           const { title, image, quantity, totalPrice, id } = item;
-          cartContainer.innerHTML += (`<div class='items' src=${image}>${title}<img onclick=${removeFromCart(id)} src='./images/icon-delete.svg'></div>`) 
+          cartContainer.innerHTML += (`<div class='items' src=${image}>${title}<img onclick="removeFromCart(${id})" src='./images/icon-delete.svg'></div>`) 
         }
 
         localStorage.setItem("cart", JSON.stringify(cart))
@@ -57,7 +57,6 @@
         console.log(cart, 'new data')
       }
 
-      isCartEmpty()
     }
 
     const toggleCart = () => {
@@ -90,6 +89,7 @@
     }
 
     const removeFromCart = (id) => {
+      console.log("triggered", id)
       let cart = JSON.parse(localStorage.getItem("cart"))
 
       cart = cart.filter(item => item.id !== id)
