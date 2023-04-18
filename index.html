@@ -15,13 +15,16 @@
   <script>
     const isCartEmpty = () => {
       let cartContainer = document.getElementById("cart-items");
+      let cart = JSON.parse(localStorage.getItem("cart"))
 
-      if (JSON.parse(localStorage.getItem("cart")).length) {
-        console.log("its there", JSON.parse(localStorage.getItem("cart")))
-        for (const item of JSON.parse(localStorage.getItem("cart"))) {
+      if ( localStorage.getItem("cart") && cart.length ) {
+
+        for (const item of cart) {
           const { title, image, quantity, totalPrice, id } = item;
           cartContainer.innerHTML += (`<div class='items' src=${image}>${title}<img onclick=${removeFromCart(id)} src='./images/icon-delete.svg'></div>`) 
         }
+
+        localStorage.setItem("cart", JSON.stringify(cart))
       }
 
       else {
@@ -50,10 +53,11 @@
 
       else {
         cart.push(data)
-        window.localStorage.setItem("cart", JSON.stringify(cart))
+        localStorage.setItem("cart", JSON.stringify(cart))
         console.log(cart, 'new data')
       }
 
+      isCartEmpty()
     }
 
     const toggleCart = () => {
