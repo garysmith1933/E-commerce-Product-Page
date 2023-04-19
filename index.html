@@ -49,7 +49,7 @@
       if (!localStorage.getItem("cart") || JSON.parse(localStorage.getItem("cart").length === 0)) {
         localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
         isCartEmpty()
-        toggleCart()
+        openCart()
         
       console.log(cart, 'clean start')
       }
@@ -58,7 +58,7 @@
         cart.push(data)
         localStorage.setItem("cart", JSON.stringify(cart))
         isCartEmpty()
-        toggleCart()
+        openCart()
       }
     }
 
@@ -80,6 +80,16 @@
       }
     }
 
+    const openCart = () => {
+      const cart = document.getElementById("cart-display")
+
+      if (cart.classList.contains("close")) {
+        cart.classList.remove("close")
+      }
+
+      cart.classList.add("open")
+    }
+
     const increaseQuantity = () => {
       const quantity = document.getElementById("quantity");
       quantity.innerHTML = Number(quantity.innerHTML) + 1;
@@ -98,7 +108,7 @@
       cart = cart.filter(item => item.id !== id)
       localStorage.setItem("cart", JSON.stringify(cart))
       isCartEmpty()
-      toggleCart()
+      openCart()
     }
 
   </script>
