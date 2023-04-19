@@ -16,6 +16,7 @@
     const isCartEmpty = () => {
       let cartContainer = document.getElementById("cart-items");
       let cart = JSON.parse(localStorage.getItem("cart"))
+      cartContainer.innerHTML = '';
 
       if ( localStorage.getItem("cart") && cart.length ) {
 
@@ -47,6 +48,8 @@
       //if the cart does not exist, make one and add the data to it
       if (!localStorage.getItem("cart") || JSON.parse(localStorage.getItem("cart").length === 0)) {
         localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
+        isCartEmpty()
+        toggleCart()
         
       console.log(cart, 'clean start')
       }
@@ -54,9 +57,9 @@
       else {
         cart.push(data)
         localStorage.setItem("cart", JSON.stringify(cart))
-        console.log(cart, 'new data')
+        isCartEmpty()
+        toggleCart()
       }
-
     }
 
     const toggleCart = () => {
@@ -94,7 +97,8 @@
 
       cart = cart.filter(item => item.id !== id)
       localStorage.setItem("cart", JSON.stringify(cart))
-      window.location.reload();
+      isCartEmpty()
+      toggleCart()
     }
 
   </script>
