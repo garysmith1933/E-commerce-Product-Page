@@ -273,7 +273,7 @@ a {
   border-radius: 8px;
 }
 
-.button {
+#button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -284,7 +284,7 @@ a {
   box-shadow: hsl(26,100%,70%) 0px 20px 30px -10px;
 }
 
-.button:hover {
+#button:hover {
   opacity: 75%;
 }
 
