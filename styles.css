@@ -138,10 +138,10 @@ a {
 }
 
 #count {
+  position: absolute;
   display:flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
   right:17rem;
   top: 3.5rem;
   height: 13px;
@@ -153,11 +153,11 @@ a {
 }
 
 .close {
-  display: none;
+  visibility: hidden;
 }
 
 .open {
-  display: inline;
+  visibility: visible;
 }
 
 #cart {

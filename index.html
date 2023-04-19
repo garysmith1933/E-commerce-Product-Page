@@ -79,10 +79,14 @@
     const toggleCart = () => {
       const cart = document.getElementById("cart-display")
       const avatar = document.getElementById("avatar")
+      const count = document.getElementById("count")
 
       if (cart.classList.contains("close")) {
         cart.classList.remove("close")
         cart.classList.add("open")
+
+        count.classList.remove("close")
+        count.classList.add("open")
 
         avatar.classList.add("avatar-active")
       }
@@ -90,18 +94,24 @@
       else {
         cart.classList.remove("open")
         cart.classList.add("close")
+
+        count.classList.remove("open")
+        count.classList.add("close")
         avatar.classList.remove("avatar-active")
       }
     }
 
     const openCart = () => {
       const cart = document.getElementById("cart-display")
+      const count = document.getElementById("count")
 
       if (cart.classList.contains("close")) {
         cart.classList.remove("close")
+        count.classList.remove("close")
       }
 
       cart.classList.add("open")
+      count.classList.add("open")
     }
 
     const increaseQuantity = () => {
@@ -158,7 +168,7 @@
 
     <div id="user-info">
       <img id='cart' onclick=toggleCart() src='./images/icon-cart.svg' alt="cart"/>
-      <div id='count' class="close"> <script> getCount() </script> </div>
+      <div id='count' class="close"><script>getCount()</script></div>
     </div>
     <img id='avatar' src='./images/image-avatar.png' alt="avatar"/>
 
