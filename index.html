@@ -22,7 +22,6 @@
 
         for (const item of cart) {
           const { title, image, quantity, totalPrice, id } = item;
-          console.log(image)
           cartContainer.innerHTML += (
             `<div class='items'>
               <img class='cart-image' src=${image} alt='cart-image'>
@@ -62,6 +61,7 @@
       if (!localStorage.getItem("cart") || JSON.parse(localStorage.getItem("cart").length === 0)) {
         localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
         isCartEmpty()
+        getCount()
         openCart()
         
       console.log(cart, 'clean start')
@@ -71,6 +71,7 @@
         cart.push(data)
         localStorage.setItem("cart", JSON.stringify(cart))
         isCartEmpty()
+        getCount()
         openCart()
       }
     }
@@ -121,7 +122,24 @@
       cart = cart.filter(item => item.id !== id)
       localStorage.setItem("cart", JSON.stringify(cart))
       isCartEmpty()
+      getCount()
       openCart()
+    }
+
+    const getCount = () => {
+      const countContainer = document.getElementById("count")
+      let count = 0;
+      let cart = JSON.parse(localStorage.getItem("cart"))
+
+      if (JSON.parse(localStorage.getItem("cart").length)) {
+        for (const item of cart ) {
+          const { quantity } = item;
+          console.log(quantity)
+          count += Number(quantity);
+        }
+      }
+      console.log(count)
+      countContainer.innerHTML = count;
     }
 
   </script>
@@ -140,7 +158,7 @@
 
     <div id="user-info">
       <img id='cart' onclick=toggleCart() src='./images/icon-cart.svg' alt="cart"/>
-      <div id='count'> 3 </div>
+      <div id='count' class="close"> <script> getCount() </script> </div>
     </div>
     <img id='avatar' src='./images/image-avatar.png' alt="avatar"/>
 

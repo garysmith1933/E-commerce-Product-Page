@@ -137,22 +137,6 @@ a {
   opacity: 75%;
 }
 
-.close {
-  display: none;
-}
-
-.open {
-  display: inline;
-}
-
-
-#cart {
-    height: 20px;
-    width: 21px;
-    margin-right: 2rem;
-    position: relative;
-}
-
 #count {
   display:flex;
   justify-content: center;
@@ -166,6 +150,21 @@ a {
   color:white;
   border-radius: 6.5px;
   font-size: 10px;
+}
+
+.close {
+  display: none;
+}
+
+.open {
+  display: inline;
+}
+
+#cart {
+    height: 20px;
+    width: 21px;
+    margin-right: 2rem;
+    position: relative;
 }
 
 #avatar {
