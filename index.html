@@ -22,7 +22,18 @@
 
         for (const item of cart) {
           const { title, image, quantity, totalPrice, id } = item;
-          cartContainer.innerHTML += (`<div class='items' src=${image}>${title}<img onclick="removeFromCart(${id})" src='./images/icon-delete.svg'></div>`) 
+          console.log(image)
+          cartContainer.innerHTML += (
+            `<div class='items'>
+              <img class='cart-image' src=${image} alt='cart-image'>
+              <div id='cart-info'>
+                ${title} 
+                <div> 
+                  $125.00 x ${quantity} <span id='total-price'>$${totalPrice}.00</span>
+                </div>
+              </div>
+             <img class='trash-image' onclick="removeFromCart(${id})" src='./images/icon-delete.svg'>
+            </div>`) 
         }
 
         localStorage.setItem("cart", JSON.stringify(cart))

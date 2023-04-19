@@ -87,11 +87,34 @@ a {
   flex-direction: column;
 }
 
+.trash-image {
+  height: 16px;
+  width: 14px;
+  margin-top: 1rem;
+}
+
+.cart-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+}
+
+.cart-info {
+  display: flex;
+  flex-direction: column;
+}
+
 .items {
   display: flex;
   justify-content: space-around;
-  width: 80%;
-  margin-bottom: 1rem;
+  width: 90%;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+
+#total-price {
+  font-weight: bold;
+  color: black;
 }
 
 .close {
