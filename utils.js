@@ -130,3 +130,9 @@ const getCount = () => {
   }
   countContainer.innerHTML = count;
 }
+
+const toggleLightbox = () => {
+  const lightbox = document.getElementById("lightbox")
+
+  lightbox.style["display"]= "block";
+}
