@@ -133,6 +133,8 @@ const getCount = () => {
 
 const toggleLightbox = () => {
   const lightbox = document.getElementById("lightbox")
-
-  lightbox.style["display"]= "block";
+  lightbox.style["display"]= "flex";
+  lightbox.style["align-items"]= "center";
+  lightbox.style["justify-content"]= "center";
+  
 }

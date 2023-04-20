@@ -45,12 +45,17 @@
   </header>
 
   <div id="lightbox">
-    <div>
-      <img class='current-image selected' src="./images/image-product-1-thumbnail.jpg" alt="shoes"/>
-      <img class='current-image' src="./images/image-product-2-thumbnail.jpg" alt="shoes"/>
-      <img class='current-image' src="./images/image-product-3-thumbnail.jpg" alt="shoes"/>
-      <img class='current-image' src="./images/image-product-4-thumbnail.jpg" alt="shoes"/>
-    </div>
+    <section id="product-display">
+      
+      <img id='product-image' onclick='toggleLightbox()' src="./images/image-product-1.jpg" alt="shoes"/>
+
+      <div id="product-thumbnails">
+        <img class='current-image selected' src="./images/image-product-1-thumbnail.jpg" alt="shoes"/>
+        <img class='current-image' src="./images/image-product-2-thumbnail.jpg" alt="shoes"/>
+        <img class='current-image' src="./images/image-product-3-thumbnail.jpg" alt="shoes"/>
+        <img class='current-image' src="./images/image-product-4-thumbnail.jpg" alt="shoes"/>
+      </div>
+    </section>
   </div>
 
   <main id="main-content">
