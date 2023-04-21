@@ -139,3 +139,34 @@ const setCurrentImage = (image, newThumbnail) => {
   prevThumbnail.classList.remove("selected")
   newThumbnail.classList.add("selected");
 }
+
+// setLightboxImage = (image, newThumbnail) => {
+
+// }
+
+const changeLightboxImage = (trigger) => {
+  const lightboxImage = document.getElementById("lightbox-image")
+  const images = ["/images/image-product-1.jpg", "/images/image-product-2.jpg", "/images/image-product-3.jpg", "/images/image-product-4.jpg"]
+
+  let index = -1
+  for (let i = 0; i < images.length; i++) {
+    const src = images[i]
+    if ((lightboxImage.src).includes(src)) {
+      index = i;
+      break;
+    }
+  }
+
+  if (trigger === 'prev') {
+    if (index === 0) return;
+    const newImage = `.${images[index - 1]}`
+    lightboxImage.src = newImage;
+  }
+
+  else {
+    if (index === images.length - 1) return;
+    const newImage = `.${images[index + 1]}`
+    console.log(newImage)
+    lightboxImage.src = newImage;
+  }
+}

@@ -47,12 +47,12 @@
   <div id="lightbox">
     <section id="lightbox-display">
       <div id="previous">
-        <img id="previous-image" src="./images/icon-previous.svg" alt="previous"/>
+        <img id="previous-image" onclick="changeLightboxImage('prev')" src="./images/icon-previous.svg" alt="previous"/>
       </div>
      
       <img id='lightbox-image' src="./images/image-product-1.jpg" alt="shoes"/>
       <div id="next">
-        <img id="next-image" src="./images/icon-next.svg" alt="next"/>
+        <img id="next-image" onclick="changeLightboxImage('next')" src="./images/icon-next.svg" alt="next"/>
       </div>
       
       <img id="lightbox-close" src="./images/icon-close.svg" onclick="closeLightbox()" alt="close"/>
