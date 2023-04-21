@@ -140,9 +140,15 @@ const setCurrentImage = (image, newThumbnail) => {
   newThumbnail.classList.add("selected");
 }
 
-// setLightboxImage = (image, newThumbnail) => {
+const setLightboxImage = (image, newThumbnail) => {
+  let currentImage = document.getElementById("lightbox-image");
+  currentImage.src = image;
+  console.log(document.getElementsByClassName("selected")[0])
+  const prevThumbnail = document.getElementsByClassName('selected')[0]
+  prevThumbnail.classList.remove("selected")
+  newThumbnail.classList.add("selected");
+}
 
-// }
 
 const changeLightboxImage = (trigger) => {
   const lightboxImage = document.getElementById("lightbox-image")
