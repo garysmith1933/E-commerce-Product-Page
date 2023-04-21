@@ -170,8 +170,6 @@ a {
 #avatar {
     height: 50px;
     width: 50px;
-    /* border-radius: 360%;
-    border: 2px solid #FF7E1B */
 }
 
 .avatar-active {
@@ -333,4 +331,28 @@ font-weight: bold;
   margin: 0 auto;
 }
 
+#product-display {
+  position: relative;
+}
+
+#previous, #next {
+  position: absolute;
+  height: 56px;
+  width: 56px;
+  border-radius: 360%;
+  background-color:white;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
+#previous {
+  left: -1.7rem;
+  top: 11rem;
+}
+
+
+#previous:hover, #next:hover {
+  color: #FF7E1B;
+}
 
