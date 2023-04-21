@@ -353,7 +353,7 @@ font-weight: bold;
 }
 
 
-#previous-image:hover, #next-image:hover {
+#previous-image:hover, #next-image:hover, #lightbox-close:hover {
   filter: invert(54%) sepia(14%) saturate(3650%) hue-rotate(345deg) brightness(103%) contrast(102%);
 }
 
@@ -369,6 +369,15 @@ font-weight: bold;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#lightbox-close {
+  position: absolute;
+  right:0;
+  top: -2rem;
+  filter: brightness(0) invert(1);
+  height: 20px;
+  width: 20px;
 }
 
 .lightbox-thumbnails {

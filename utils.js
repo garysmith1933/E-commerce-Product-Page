@@ -136,5 +136,9 @@ const toggleLightbox = () => {
   lightbox.style["display"]= "flex";
   lightbox.style["align-items"]= "center";
   lightbox.style["justify-content"]= "center";
-  
+}
+
+const closeLightbox = () => {
+  const lightbox = document.getElementById("lightbox")
+  lightbox.style["display"] = 'none';
 }
