@@ -4,7 +4,6 @@ const renderCart = () => {
   cartContainer.innerHTML = '';
 
   if ( localStorage.getItem("cart") && cart.length ) {
-
     for (const item of cart) {
       const { title, image, quantity, totalPrice, id } = item;
       cartContainer.innerHTML += (
@@ -30,7 +29,6 @@ const renderCart = () => {
   }
 }
 
-//need to be adjusted for other products: ex: if the same image, adjust quantity, otherwise add to storage
 const addToCart = () => {
   let cart = JSON.parse(localStorage.getItem("cart"));
   const image = document.getElementById("product-image").src;
@@ -38,24 +36,12 @@ const addToCart = () => {
   const title = 'Fall Limited Edition Sneakers';
   const totalPrice = 125.00 * quantity;
   const id = cart ? cart.length : 0
-  const data = {title, image, quantity, totalPrice, id}
-
   if (quantity === 0) return;
 
-  if (!localStorage.getItem("cart") || JSON.parse(localStorage.getItem("cart").length === 0)) {
-    localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
-    renderCart()
-    getCount()
-    openCart()
-  }
-
-  else {
-    cart.push(data)
-    localStorage.setItem("cart", JSON.stringify(cart))
-    renderCart()
-    getCount()
-    openCart()
-  }
+  localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
+  renderCart()
+  getCount()
+  openCart() 
 }
 
 const toggleCart = () => {
@@ -120,7 +106,7 @@ const getCount = () => {
   const countContainer = document.getElementById("count")
   let count = 0;
   let cart = JSON.parse(localStorage.getItem("cart"))
-
+  console.log(cart)
   if (JSON.parse(localStorage.getItem("cart").length)) {
     for (const item of cart ) {
       const { quantity } = item;
@@ -141,4 +127,66 @@ const toggleLightbox = () => {
 const closeLightbox = () => {
   const lightbox = document.getElementById("lightbox")
   lightbox.style["display"] = 'none';
+}
+
+const setCurrentImage = (image, newThumbnail) => {
+  let currentImage = document.getElementById("product-image");
+  currentImage.src = image;
+  console.log(document.getElementsByClassName("selected")[0])
+  const prevThumbnail = document.getElementsByClassName('selected')[1]
+  prevThumbnail.classList.remove("selected")
+  newThumbnail.classList.add("selected");
+}
+
+const setLightboxImage = (image, newThumbnail) => {
+  let currentImage = document.getElementById("lightbox-image");
+  currentImage.src = image;
+  console.log(document.getElementsByClassName("selected")[0])
+  const prevThumbnail = document.getElementsByClassName('selected')[0]
+  prevThumbnail.classList.remove("selected")
+  newThumbnail.classList.add("selected");
+}
+
+
+const changeLightboxImage = (trigger) => {
+  const lightboxImage = document.getElementById("lightbox-image")
+  const images = [{src: "/images/image-product-1.jpg", id: 1}, {src: "/images/image-product-2.jpg", id: 2}, {src: "/images/image-product-3.jpg", id:3}, {src:"/images/image-product-4.jpg", id:4}]
+  let index = -1
+  let thumbnailId = 0;
+  for (let i = 0; i < images.length; i++) {
+    console.log(images[i])
+    const { src, id} = images[i]
+    if ((lightboxImage.src).includes(src)) {
+      index = i;
+      thumbnailId = id;
+      break;
+    }
+  }
+
+  if (trigger === 'prev') {
+    if (index === 0) return;
+      const newSrc = images[index - 1].src
+      const newImage = `.${newSrc}`
+      lightboxImage.src = newImage;
+
+      const newThumbnail = document.getElementById(`thumb${thumbnailId - 1}`)
+      console.log(thumbnailId)
+      newThumbnail.classList.add("selected")
+  }
+
+  else {
+    if (index === images.length - 1) return;
+    const newSrc = images[index + 1].src
+    const newImage = `.${newSrc}`
+    console.log(newImage)
+    lightboxImage.src = newImage;
+
+    const newThumbnail = document.getElementById(`thumb${thumbnailId + 1}`)
+    console.log(thumbnailId)
+    newThumbnail.classList.add("selected")
+  }
+
+  const prevThumbnail = document.getElementsByClassName('selected')[0]
+  prevThumbnail.classList.remove("selected")
+
 }

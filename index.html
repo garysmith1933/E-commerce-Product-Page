@@ -47,21 +47,21 @@
   <div id="lightbox">
     <section id="lightbox-display">
       <div id="previous">
-        <img id="previous-image" src="./images/icon-previous.svg" alt="previous"/>
+        <img id="previous-image" onclick="changeLightboxImage('prev')" src="./images/icon-previous.svg" alt="previous"/>
       </div>
      
       <img id='lightbox-image' src="./images/image-product-1.jpg" alt="shoes"/>
       <div id="next">
-        <img id="next-image" src="./images/icon-next.svg" alt="next"/>
+        <img id="next-image" onclick="changeLightboxImage('next')" src="./images/icon-next.svg" alt="next"/>
       </div>
       
       <img id="lightbox-close" src="./images/icon-close.svg" onclick="closeLightbox()" alt="close"/>
 
       <div id="product-thumbnails" class="lightbox-thumbnails">
-        <img class='current-image selected' src="./images/image-product-1-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-2-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-3-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-4-thumbnail.jpg" alt="shoes"/>
+        <img class='images selected' id="thumb1" src="./images/image-product-1-thumbnail.jpg" onclick="setLightboxImage('./images/image-product-1.jpg', document.getElementById('thumb1'))" alt="shoes"/>
+        <img class='images' id="thumb2" src="./images/image-product-2-thumbnail.jpg" onclick="setLightboxImage('./images/image-product-2.jpg', document.getElementById('thumb2'))" alt="shoes"/>
+        <img class='images' id="thumb3" src="./images/image-product-3-thumbnail.jpg" onclick="setLightboxImage('./images/image-product-3.jpg', document.getElementById('thumb3'))" alt="shoes"/>
+        <img class='images' id="thumb4" src="./images/image-product-4-thumbnail.jpg" onclick="setLightboxImage('./images/image-product-4.jpg', document.getElementById('thumb4'))" alt="shoes"/>
       </div>
     </section>
   </div>
@@ -71,10 +71,10 @@
       <img id='product-image' onclick='toggleLightbox()' src="./images/image-product-1.jpg" alt="shoes"/>
 
       <div id="product-thumbnails">
-        <img class='current-image selected' src="./images/image-product-1-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-2-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-3-thumbnail.jpg" alt="shoes"/>
-        <img class='current-image' src="./images/image-product-4-thumbnail.jpg" alt="shoes"/>
+        <img class='images selected' id="img1" src="./images/image-product-1-thumbnail.jpg" onclick="setCurrentImage('./images/image-product-1.jpg', document.getElementById('img1'))" alt="shoes"/>
+        <img class='images' id="img2" src="./images/image-product-2-thumbnail.jpg" onclick="setCurrentImage('./images/image-product-2.jpg', document.getElementById('img2'))" alt="shoes"/>
+        <img class='images' id="img3" src="./images/image-product-3-thumbnail.jpg" onclick="setCurrentImage('./images/image-product-3.jpg', document.getElementById('img3'))" alt="shoes"/>
+        <img class='images' id="img4" src="./images/image-product-4-thumbnail.jpg" onclick="setCurrentImage('./images/image-product-4.jpg', document.getElementById('img4'))" alt="shoes"/>
       </div>
     </section>
 
