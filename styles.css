@@ -331,10 +331,6 @@ font-weight: bold;
   margin: 0 auto;
 }
 
-#product-display {
-  position: relative;
-}
-
 #previous, #next {
   position: absolute;
   height: 56px;
@@ -348,11 +344,36 @@ font-weight: bold;
 
 #previous {
   left: -1.7rem;
-  top: 11rem;
+  top: 13rem;
+}
+
+#next {
+  right: -1.7rem;
+  top: 13rem;
 }
 
 
-#previous:hover, #next:hover {
-  color: #FF7E1B;
+#previous-image:hover, #next-image:hover {
+  filter: invert(54%) sepia(14%) saturate(3650%) hue-rotate(345deg) brightness(103%) contrast(102%);
 }
 
+#lightbox-image {
+  width: 550px;
+  height: 550px;
+  border-radius: 15px;
+}
+
+#lightbox-display {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-thumbnails {
+  display: flex;
+  justify-content: center;
+  width: 445px;
+  height: 88px
+}
