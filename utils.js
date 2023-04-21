@@ -4,7 +4,6 @@ const renderCart = () => {
   cartContainer.innerHTML = '';
 
   if ( localStorage.getItem("cart") && cart.length ) {
-
     for (const item of cart) {
       const { title, image, quantity, totalPrice, id } = item;
       cartContainer.innerHTML += (
@@ -38,24 +37,13 @@ const addToCart = () => {
   const title = 'Fall Limited Edition Sneakers';
   const totalPrice = 125.00 * quantity;
   const id = cart ? cart.length : 0
-  const data = {title, image, quantity, totalPrice, id}
-
   if (quantity === 0) return;
 
-  if (!localStorage.getItem("cart") || JSON.parse(localStorage.getItem("cart").length === 0)) {
-    localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
-    renderCart()
-    getCount()
-    openCart()
-  }
-
-  else {
-    cart.push(data)
-    localStorage.setItem("cart", JSON.stringify(cart))
-    renderCart()
-    getCount()
-    openCart()
-  }
+  localStorage.setItem("cart", JSON.stringify([{title, image, quantity, totalPrice, id}]))
+  renderCart()
+  getCount()
+  openCart()
+  
 }
 
 const toggleCart = () => {
@@ -120,7 +108,7 @@ const getCount = () => {
   const countContainer = document.getElementById("count")
   let count = 0;
   let cart = JSON.parse(localStorage.getItem("cart"))
-
+  console.log(cart)
   if (JSON.parse(localStorage.getItem("cart").length)) {
     for (const item of cart ) {
       const { quantity } = item;
