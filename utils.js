@@ -143,7 +143,11 @@ const closeLightbox = () => {
   lightbox.style["display"] = 'none';
 }
 
-const setCurrentImage = (image) => {
+const setCurrentImage = (image, newThumbnail) => {
   let currentImage = document.getElementById("product-image");
   currentImage.src = image;
+  console.log(document.getElementsByClassName("selected")[0])
+  const prevThumbnail = document.getElementsByClassName('selected')[1]
+  prevThumbnail.classList.remove("selected")
+  newThumbnail.classList.add("selected");
 }
