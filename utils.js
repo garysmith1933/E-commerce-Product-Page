@@ -130,3 +130,15 @@ const getCount = () => {
   }
   countContainer.innerHTML = count;
 }
+
+const toggleLightbox = () => {
+  const lightbox = document.getElementById("lightbox")
+  lightbox.style["display"]= "flex";
+  lightbox.style["align-items"]= "center";
+  lightbox.style["justify-content"]= "center";
+}
+
+const closeLightbox = () => {
+  const lightbox = document.getElementById("lightbox")
+  lightbox.style["display"] = 'none';
+}
