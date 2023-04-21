@@ -198,13 +198,13 @@ a {
   margin-top: 1rem;
 }
 
-.current-image {
+.images {
   height: 88px;
   width: 88px;
   border-radius: 10px;
 }
 
-.current-image:hover {
+.images:hover {
   opacity: 50%;
 }
 

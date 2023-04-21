@@ -142,3 +142,8 @@ const closeLightbox = () => {
   const lightbox = document.getElementById("lightbox")
   lightbox.style["display"] = 'none';
 }
+
+const setCurrentImage = (image) => {
+  let currentImage = document.getElementById("product-image");
+  currentImage.src = image;
+}
