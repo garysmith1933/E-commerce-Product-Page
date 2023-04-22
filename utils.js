@@ -154,7 +154,6 @@ const changeLightboxImage = (trigger) => {
   let index = -1
   let thumbnailId = 0;
   for (let i = 0; i < images.length; i++) {
-    console.log(images[i])
     const { src, id} = images[i]
     if ((lightboxImage.src).includes(src)) {
       index = i;
@@ -169,24 +168,24 @@ const changeLightboxImage = (trigger) => {
       const newImage = `.${newSrc}`
       lightboxImage.src = newImage;
 
+      const prevThumbnail = document.getElementsByClassName('selected')[0]
+      prevThumbnail.classList.remove("selected")
+
       const newThumbnail = document.getElementById(`thumb${thumbnailId - 1}`)
-      console.log(thumbnailId)
       newThumbnail.classList.add("selected")
   }
 
   else {
     if (index === images.length - 1) return;
+    console.log(document.getElementsByClassName("selected"))
     const newSrc = images[index + 1].src
     const newImage = `.${newSrc}`
-    console.log(newImage)
     lightboxImage.src = newImage;
 
+    const prevThumbnail = document.getElementsByClassName('selected')[0]
+    prevThumbnail.classList.remove("selected")
+
     const newThumbnail = document.getElementById(`thumb${thumbnailId + 1}`)
-    console.log(thumbnailId)
     newThumbnail.classList.add("selected")
   }
-
-  const prevThumbnail = document.getElementsByClassName('selected')[0]
-  prevThumbnail.classList.remove("selected")
-
 }
