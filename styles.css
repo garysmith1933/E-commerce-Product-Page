@@ -183,10 +183,11 @@ a {
 #avatar {
     height: 50px;
     width: 50px;
+    cursor: pointer;
+    border-radius: 360%;
 }
 
 .avatar-active {
-  border-radius: 360%;
   border: 1px solid #FF7E1B
 }
 

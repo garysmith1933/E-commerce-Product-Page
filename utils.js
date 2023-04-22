@@ -46,7 +46,6 @@ const addToCart = () => {
 
 const toggleCart = () => {
   const cart = document.getElementById("cart-display")
-  const avatar = document.getElementById("avatar")
   const count = document.getElementById("count")
 
   if (cart.classList.contains("close")) {
@@ -55,8 +54,6 @@ const toggleCart = () => {
 
     count.classList.remove("close")
     count.classList.add("open")
-
-    avatar.classList.add("avatar-active")
   }
  
   else {
@@ -65,7 +62,6 @@ const toggleCart = () => {
 
     count.classList.remove("open")
     count.classList.add("close")
-    avatar.classList.remove("avatar-active")
   }
 }
 
@@ -187,5 +183,16 @@ const changeLightboxImage = (trigger) => {
 
     const newThumbnail = document.getElementById(`thumb${thumbnailId + 1}`)
     newThumbnail.classList.add("selected")
+  }
+}
+
+const toggleAvatar = () => {
+  avatar = document.getElementById("avatar")
+  if (avatar.classList.contains("avatar-active")) {
+    avatar.classList.remove("avatar-active");
+  }
+
+  else {
+    avatar.classList.add("avatar-active");
   }
 }
