@@ -32,7 +32,7 @@ a {
   justify-content: space-between;
   position: relative;
   z-index: 1;
-  cursor: pointer;
+  cursor:pointer;
 }
 
 .nav-item:hover:after  {
@@ -142,6 +142,7 @@ a {
   border-radius: 8px;
   color:white;
   margin-top: 1rem;
+  cursor:pointer
 }
 
 #cart-button:hover {
@@ -176,6 +177,7 @@ a {
     width: 21px;
     margin-right: 2rem;
     position: relative;
+    cursor:pointer;
 }
 
 #avatar {
@@ -201,6 +203,7 @@ a {
   width: 445px;
   height: 445px;
   border-radius: 15px;
+  cursor:pointer;
 }
 
 #product-thumbnails {
@@ -213,6 +216,7 @@ a {
   height: 88px;
   width: 88px;
   border-radius: 10px;
+  cursor:pointer;
 }
 
 .images:hover {
@@ -306,6 +310,7 @@ a {
   background-color:hsl(26,100%,55%);
   border-radius: 8px;
   box-shadow: hsl(26,100%,70%) 0px 20px 30px -10px;
+  cursor:pointer;
 }
 
 #button:hover {
@@ -351,6 +356,7 @@ font-weight: bold;
   display:flex;
   justify-content: center;
   align-items:center;
+  cursor:pointer;
 }
 
 #previous {
@@ -362,7 +368,6 @@ font-weight: bold;
   right: -1.7rem;
   top: 13rem;
 }
-
 
 #previous-image:hover, #next-image:hover, #lightbox-close:hover {
   filter: invert(54%) sepia(14%) saturate(3650%) hue-rotate(345deg) brightness(103%) contrast(102%);
