@@ -201,17 +201,22 @@ const toggleAvatar = () => {
 const toggleMobileMenu = () => {
   const menu = document.getElementById("nav-menu");
   const nav = document.getElementById("navigation");
- 
+  const background = document.getElementById("mobile-nav-background-filter");
+
   if ( menu.src.includes("/images/icon-close.svg" )) {
+    // close
     menu.src = './images/icon-menu.svg';
     menu.classList.remove('nav-open');
     nav.style["visibility"] = "hidden";
+    background.style["display"] = "none";
   }
 
   else {
+    // open
     menu.src = './images/icon-close.svg';
     menu.classList.add('nav-open');
     nav.style["visibility"]  = "visible"; 
+    background.style["display"] = "block";
   }
 }
 

@@ -232,6 +232,18 @@ font-weight: bold;
   visibility: hidden;
 }
 
+#mobile-nav-background-filter {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  margin: 0 auto;
+}
+
 @media (max-width: 50em) {
   #mobile-previous, #mobile-next {
     visibility: visible ;
