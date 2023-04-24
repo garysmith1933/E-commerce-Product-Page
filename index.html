@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="styles.css"/>
   <link rel="stylesheet" type="text/css" href="nav.css"/>
+  <link rel="stylesheet" type="text/css" href="product.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -17,7 +18,7 @@
 </head>
 <body>
   <header id="header">
-    <img id="nav-open-close-menu" src="./images/icon-menu.svg" onclick="toggleMobileMenu()">
+    <img id="nav-menu" src="./images/icon-menu.svg" onclick="toggleMobileMenu()">
     <h1 id="nav-name">sneakers</h1>
     <nav id="navigation">
       <a class="nav-item">Collections</a>
@@ -34,8 +35,8 @@
     <img id='avatar' onclick="toggleAvatar()" src='./images/image-avatar.png' alt="avatar"/>
 
     <div id='cart-display' class="close">
-      <div id="cart-title">
-        <span id="cart-header"> Cart </span>
+      <div id="cart-name-container">
+        <span id="cart-name"> Cart </span>
       </div>
       
       <div id="cart-items">
@@ -70,7 +71,20 @@
 
   <main id="main-content">
     <section id="product-display">
+
+      <!-- only visible on mobile -->
+      <div id="mobile-previous">
+        <img id="previous-image" onclick="changeMobileImage('prev')" src="./images/icon-previous.svg" alt="previous"/>
+      </div>
+
+      <!-- Main image -->
       <img id='product-image' onclick='toggleLightbox()' src="./images/image-product-1.jpg" alt="shoes"/>
+
+       <!-- only visible on mobile -->
+      <div id="mobile-next">
+        <img id="next-image" onclick="changeMobileImage('next')" src="./images/icon-next.svg" alt="next"/>
+      </div>
+      
 
       <div id="product-thumbnails">
         <img class='images selected' id="img1" src="./images/image-product-1-thumbnail.jpg" onclick="setCurrentImage('./images/image-product-1.jpg', document.getElementById('img1'))" alt="shoes"/>
@@ -112,10 +126,10 @@
     </section>
   </main>
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Gary Smith</a>.
-  </div>
+  </div> -->
 </body>
 </html>
 

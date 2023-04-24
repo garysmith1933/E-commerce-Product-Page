@@ -58,13 +58,26 @@ top: 4.4rem;
   position: relative;
 }
 
-#nav-open-close-menu {
+#nav-menu {
   display: none;
 }
 
 /* MOBILE */
 
-@media (max-width: 50em) {
+@media (max-width: 50em) { 
+  #header {
+    border-bottom: none;
+    height: 30px;
+    padding: 1.5rem;
+    width: 90%;
+    margin-top: 0;
+  }
+
+  #nav-name {
+   font-size: 40px;
+   margin-left: 1rem;
+  }
+
   #navigation {
     position: absolute;
     flex-direction: column;
@@ -77,18 +90,39 @@ top: 4.4rem;
     width: 70%;
     height: 100vh;
     font-weight: bold;
+    visibility: hidden;
   }
 
-  #nav-open-close-menu {
-    display:inline;
+  #nav-menu {
+    display: inline;
     position: absolute;
+    width: 16px;
+    height: 15px;
+    left: 1rem;
+    top: 2.3rem;
+  }
+
+  .nav-open {
     z-index: 2;
-    top: 1rem;
-    left: -1rem;
   }
 
   .nav-item {
     margin-top: 1rem;
     color: black;
+  }
+  
+  #avatar {
+    height: 24px;
+    width: 24px;
+  }
+
+  #cart {
+    height: 19px;
+    width: 19px;
+  }
+
+  #count {
+    right: 3rem;
+    top: 3rem
   }
 }

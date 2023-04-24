@@ -199,18 +199,43 @@ const toggleAvatar = () => {
 
 
 const toggleMobileMenu = () => {
-  const icon = document.getElementById("nav-open-close-menu")
-  const nav = document.getElementById("navigation")
-  console.log("clicked", icon.src)
-
-  if ( icon.src.includes("/images/icon-close.svg")) {//if the icon is the x, the menu is open
-   icon.src = './images/icon-menu.svg'
-   nav.style["visibility"] = "hidden";
+  const menu = document.getElementById("nav-menu");
+  const nav = document.getElementById("navigation");
+ 
+  if ( menu.src.includes("/images/icon-close.svg" )) {
+    menu.src = './images/icon-menu.svg';
+    menu.classList.remove('nav-open');
+    nav.style["visibility"] = "hidden";
   }
 
   else {
-    console.log('it is currently closed')
-    icon.src = './images/icon-close.svg'
-    nav.style["visibility"]  = "visible";
+    menu.src = './images/icon-close.svg';
+    menu.classList.add('nav-open');
+    nav.style["visibility"]  = "visible"; 
+  }
+}
+
+const changeMobileImage = (trigger) => {
+  const productImage = document.getElementById("product-image");
+  const currentSource = productImage.src;
+  const images = ["/images/image-product-1.jpg","/images/image-product-2.jpg","/images/image-product-3.jpg","/images/image-product-4.jpg"];
+  let index = 0;
+
+  for (let i = 0; i < images.length; i++) {
+    const src = images[i]
+    if ( currentSource.includes(src) ) {
+      index = i + 1;
+      break;
+    }
+  }
+
+  if ( trigger === "prev") {
+    if ( index === 1 ) return;
+    productImage.src = `./images/image-product-${index - 1}.jpg`;
+  }
+
+  else {
+    if ( index === images.length) return;
+    productImage.src = `./images/image-product-${index + 1}.jpg`;
   }
 }
