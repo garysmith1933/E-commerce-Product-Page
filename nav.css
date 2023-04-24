@@ -68,15 +68,22 @@ top: 4.4rem;
     justify-content: flex-start;
     z-index: 1;
     top: 2rem;
-    left: 0rem;
+    left: -1rem;
     background-color: white;
     width: 70%;
     height: 100vh;
     font-weight: bold;
-    color: black;
+  }
+
+  #nav-close {
+    position: absolute;
+    z-index: 2;
+    top: 1rem;
+    left: -1rem;
   }
 
   .nav-item {
     margin-top: 1rem;
+    color: black;
   }
 }
