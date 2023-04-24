@@ -246,4 +246,11 @@ font-weight: bold;
     right: 1rem;
     top: 15rem;
   }
+
+  #cart-display {
+    right: 0.2rem;
+    height: 320px;
+    width: 460px;
+    top: 5.5rem;
+  }
 }
