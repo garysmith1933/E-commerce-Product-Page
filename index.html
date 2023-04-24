@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css" href="styles.css"/>
+  <link rel="stylesheet" type="text/css" href="nav.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
 </head>
 <body>
   <header id="header">
-    <h1 id="company">sneakers</h1>
+    <h1 id="nav-name">sneakers</h1>
     <nav id="navigation">
       <a class="nav-item">Collections</a>
       <a class="nav-item">Men</a>
@@ -25,7 +26,7 @@
       <a class="nav-item">Contact</a>
     </nav>
 
-    <div id="user-info">
+    <div id="nav-user-info">
       <img id='cart' onclick=toggleCart() src='./images/icon-cart.svg' alt="cart"/>
       <div id='count' class="close"><script>getCount()</script></div>
     </div>
