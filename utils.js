@@ -196,3 +196,21 @@ const toggleAvatar = () => {
     avatar.classList.add("avatar-active");
   }
 }
+
+
+const toggleMobileMenu = () => {
+  const icon = document.getElementById("nav-open-close-menu")
+  const nav = document.getElementById("navigation")
+  console.log("clicked", icon.src)
+
+  if ( icon.src.includes("/images/icon-close.svg")) {//if the icon is the x, the menu is open
+   icon.src = './images/icon-menu.svg'
+   nav.style["visibility"] = "hidden";
+  }
+
+  else {
+    console.log('it is currently closed')
+    icon.src = './images/icon-close.svg'
+    nav.style["visibility"]  = "visible";
+  }
+}

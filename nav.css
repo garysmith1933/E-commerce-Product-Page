@@ -58,6 +58,10 @@ top: 4.4rem;
   position: relative;
 }
 
+#nav-open-close-menu {
+  display: none;
+}
+
 /* MOBILE */
 
 @media (max-width: 50em) {
@@ -75,7 +79,8 @@ top: 4.4rem;
     font-weight: bold;
   }
 
-  #nav-close {
+  #nav-open-close-menu {
+    display:inline;
     position: absolute;
     z-index: 2;
     top: 1rem;
