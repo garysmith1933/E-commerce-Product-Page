@@ -51,9 +51,6 @@ const toggleCart = () => {
   if (cart.classList.contains("close")) {
     cart.classList.remove("close")
     cart.classList.add("open")
-
-    count.classList.remove("close")
-    count.classList.add("open")
   }
  
   else {
@@ -114,6 +111,7 @@ const getCount = () => {
 }
 
 const toggleLightbox = () => {
+  if ( window.innerWidth < 800 ) return;
   const lightbox = document.getElementById("lightbox")
   lightbox.style["display"]= "flex";
   lightbox.style["align-items"]= "center";
@@ -194,5 +192,53 @@ const toggleAvatar = () => {
 
   else {
     avatar.classList.add("avatar-active");
+  }
+}
+
+
+const toggleMobileMenu = () => {
+  const menu = document.getElementById("nav-menu");
+  const nav = document.getElementById("navigation");
+  const background = document.getElementById("mobile-nav-background-filter");
+
+  if ( menu.src.includes("/images/icon-close.svg" )) {
+    // close
+    menu.src = './images/icon-menu.svg';
+    menu.classList.remove('nav-open');
+    nav.style["visibility"] = "hidden";
+    background.style["display"] = "none";
+  }
+
+  else {
+    // open
+    menu.src = './images/icon-close.svg';
+    menu.classList.add('nav-open');
+    nav.style["visibility"]  = "visible"; 
+    background.style["display"] = "block";
+  }
+}
+
+const changeMobileImage = (trigger) => {
+  const productImage = document.getElementById("product-image");
+  const currentSource = productImage.src;
+  const images = ["/images/image-product-1.jpg","/images/image-product-2.jpg","/images/image-product-3.jpg","/images/image-product-4.jpg"];
+  let index = 0;
+
+  for (let i = 0; i < images.length; i++) {
+    const src = images[i]
+    if ( currentSource.includes(src) ) {
+      index = i + 1;
+      break;
+    }
+  }
+
+  if ( trigger === "prev") {
+    if ( index === 1 ) return;
+    productImage.src = `./images/image-product-${index - 1}.jpg`;
+  }
+
+  else {
+    if ( index === images.length) return;
+    productImage.src = `./images/image-product-${index + 1}.jpg`;
   }
 }
