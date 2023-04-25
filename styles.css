@@ -1,4 +1,4 @@
-.attribution { font-size: 11px; text-align: center; }
+.attribution { font-size: 11px; text-align: center; margin-top: 1rem; }
 .attribution a { color: hsl(228, 45%, 44%); }
 
 body {
@@ -264,5 +264,12 @@ font-weight: bold;
     height: 320px;
     width: 460px;
     top: 5.5rem;
+  }
+
+  .attribution {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
   }
 }
