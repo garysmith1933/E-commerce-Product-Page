@@ -114,6 +114,7 @@ const getCount = () => {
 }
 
 const toggleLightbox = () => {
+  if ( window.innerWidth < 800 ) return;
   const lightbox = document.getElementById("lightbox")
   lightbox.style["display"]= "flex";
   lightbox.style["align-items"]= "center";
