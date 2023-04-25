@@ -51,9 +51,6 @@ const toggleCart = () => {
   if (cart.classList.contains("close")) {
     cart.classList.remove("close")
     cart.classList.add("open")
-
-    count.classList.remove("close")
-    count.classList.add("open")
   }
  
   else {
